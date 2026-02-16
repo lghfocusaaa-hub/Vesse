@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vessel Li - 个人主页</title>
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/code.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981',
+                        secondary: '#1F2937',
+                        accent: '#059669'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #000000 0%, #1a472a 25%, #14532d 50%, #1a472a 75%, #000000 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #10B981;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #10B981 }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-white">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-code text-primary text-xl"></i>
+                    <span class="text-xl font-bold">Vessel Li</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-primary transition-colors duration-300">首页</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-primary transition-colors duration-300">关于我</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-primary transition-colors duration-300">技能</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-primary transition-colors duration-300">作品</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-primary transition-colors duration-300">联系</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800/95 backdrop-blur-md">
+            <div class="container mx-auto px-6 py-4 space-y-4">
+                <a href="#home" class="block nav-link text-gray-300 hover:text-primary transition-colors duration-300">首页</a>
+                <a href="#about" class="block nav-link text-gray-300 hover:text-primary transition-colors duration-300">关于我</a>
+            <a href="#skills" class="block nav-link text-gray-300 hover:text-primary transition-colors duration-300">技能</a>
+                <a href="#projects" class="block nav-link text-gray-300 hover:text-primary transition-colors duration-300">作品</a>
+                <a href="#contact" class="block nav-link text-gray-300 hover:text-primary transition-colors duration-300">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页部分 -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="animate-float mb-8">
+                <div class="w-32 h-32 mx-auto bg-primary/20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-laptop-code text-primary text-4xl"></i>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
+                你好！我是 <span class="text-primary">Vessel Li</span>
+            </h1>
+            
+            <div class="typewriter text-xl md:text-2xl text-gray-300 mb-8 mx-auto max-w-3xl">
+                欢迎来到我的个人首页
+            </div>
+            
+            <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto animate-fade-in-up">
+                我是一名热爱编程的学习者，专注于Python、Arduino、Scratch和Web开发。同时我也享受滑板、乒乓球和绘画带来的乐趣。
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
+                <a href="#projects" class="bg-primary hover:bg-accent text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-eye mr-2"></i>查看我的作品
+                </a>
+                <a href="#contact" class="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                    <i class="fas fa-envelope mr-2"></i>联系我
+                </a>
+            </div>
+        </div>
+        
+        <!-- 滚动指示器 -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 关于我部分 -->
+        <section id="about" class="py-20 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16 text-primary">关于我</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-fade-in-up">
+                        <div class="bg-gray-800/50 rounded-2xl p-8 card-hover">
+                            <h3 class="text-2xl font-semibold mb-6 text-white">个人简介</h3>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            我是一个编程学习者，目前正在深入学习各种编程语言和技术。我的兴趣广泛，从前后端开发到硬件编程，从创意编程到网页设计，我都充满好奇和探索欲。
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            除了编程，我还热爱运动与艺术。滑板让我感受自由，乒乓球锻炼我的反应能力，而绘画则是我表达创意的重要方式。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="animate-fade-in-up">
+                    <div class="bg-gray-800/50 rounded-2xl p-8 card-hover">
+                        <h3 class="text-2xl font-semibold mb-6 text-white">我的平台</h3>
+                        <div class="grid gap-4">
+                            <a href="https://scratchers.cn/s/user?username=Vessel.Li" target="_blank" class="flex items-center justify-between p-4 bg-gray-700/30 rounded-lg hover:bg-primary/20 transition-all duration-300">
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-puzzle-piece text-primary text-2xl"></i>
+                                <span class="text-lg font-medium">我的 Scratch 网站</span>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-400"></i>
+                        </a>
+                        
+                        <a href="https://www.tinkercad.com/users/a63DmCVnl5z?type=designs" target="_blank" class="flex items-center justify-between p-4 bg-gray-700/30 rounded-lg hover:bg-primary/20 transition-all duration-300">
+                                <div class="flex items-center space-x-4">
+                                    <i class="fas fa-cube text-primary text-2xl"></i>
+                                    <span class="text-lg font-medium">我的 Tinkercad 建模</span>
+                                </div>
+                                <i class="fas fa-external-link-alt text-gray-400"></i>
+                            </a>
+                            
+                            <!-- 新增CCW平台链接 -->
+                            <a href="https://www.ccw.site/student/69704d3886bbc77f84e44e23" target="_blank" class="flex items-center justify-between p-4 bg-gray-700/30 rounded-lg hover:bg-primary/20 transition-all duration-300">
+                                <div class="flex items-center space-x-4">
+                                    <i class="fas fa-globe text-primary text-2xl"></i>
+                                    <span class="text-lg font-medium">我的 CCW 平台</span>
+                                </div>
+                                <i class="fas fa-external-link-alt text-gray-400"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能部分 -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-primary">技术技能</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-800/50 rounded-2xl p-6 text-center card-hover animate-fade-in-up">
+                <i class="fab fa-python text-primary text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Python</h3>
+                <p class="text-gray-400">数据处理、自动化脚本、后端开发</p>
+            </div>
+            
+            <div class="bg-gray-800/50 rounded-2xl p-6 text-center card-hover animate-fade-in-up">
+                    <i class="fas fa-microchip text-primary text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Arduino</h3>
+                    <p class="text-gray-400">硬件编程、物联网项目、机器人控制</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-2xl p-6 text-center card-hover animate-fade-in-up">
+                        <i class="fas fa-code text-primary text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Scratch</h3>
+                        <p class="text-gray-400">创意编程、教育项目、逻辑思维</p>
+                    </div>
+                    
+                    <div class="bg-gray-800/50 rounded-2xl p-6 text-center card-hover animate-fade-in-up">
+                            <i class="fab fa-html5 text-primary text-4xl mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">Web 开发</h3>
+                            <p class="text-gray-400">HTML/CSS/JavaScript、响应式设计</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 作品部分 -->
+                <section id="projects" class="py-20 bg-gray-900/50">
+                    <div class="container mx-auto px-6">
+                        <h2 class="text-4xl font-bold text-center mb-16 text-primary">我的作品</h2>
+                        
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="bg-gray-800/50 rounded-2xl p-6 card-hover animate-fade-in-up">
+                            <div class="w-full h-48 bg-primary/20 rounded-xl mb-4 flex items-center justify-center">
+                                <i class="fas fa-project-diagram text-primary text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Python 项目</h3>
+                            <p class="text-gray-400 mb-4">各种实用工具和自动化脚本</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-primary/30 text-primary text-sm px-3 py-1 rounded-full">Python</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 rounded-2xl p-6 card-hover animate-fade-in-up">
+                                <div class="w-full h-48 bg-primary/20 rounded-xl mb-4 flex items-center justify-center">
+                                    <i class="fas fa-robot text-primary text-3xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Arduino 项目</h3>
+                                <p class="text-gray-400 mb-4">智能硬件和物联网应用</p>
+                                <div class="flex space-x-2">
+                                    <span class="bg-primary/30 text-primary text-sm px-3 py-1 rounded-full">Arduino</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-800/50 rounded-2xl p-6 card-hover animate-fade-in-up">
+                                    <div class="w-full h-48 bg-primary/20 rounded-xl mb-4 flex items-center justify-center">
+                                        <i class="fas fa-gamepad text-primary text-3xl"></i>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-2">Scratch 游戏</h3>
+                                    <p class="text-gray-400 mb-4">创意编程和互动游戏</p>
+                                    <div class="flex space-x-2">
+                                        <span class="bg-primary/30 text-primary text-sm px-3 py-1 rounded-full">Scratch</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- QR码区域 -->
+                            <div class="col-span-full flex justify-center mt-12 animate-fade-in-up">
+                                <div class="bg-white p-4 rounded-2xl shadow-2xl">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://scratchers.cn/s/user?username=Vessel.Li" alt="我的Scratch作品集QR码" class="w-32 h-32">
+                                    <p class="text-gray-600 text-sm mt-2">扫描查看我的作品</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 联系部分 -->
+                    <section id="contact" class="py-20">
+                        <div class="container mx-auto px-6">
+                            <h2 class="text-4xl font-bold text-center mb-16 text-primary">联系我</h2>
+                            
+                            <div class="max-w-2xl mx-auto bg-gray-800/50 rounded-2xl p-8 card-hover animate-fade-in-up">
+                            <form id="contact-form" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-gray-300 mb-2">姓名</label>
+                                        <input type="text" class="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入您的姓名">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-300 mb-2">邮箱</label>
+                                        <input type="email" class="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入您的邮箱">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-300 mb-2">消息</label>
+                                    <textarea class="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-32" placeholder="请输入您的消息内容"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary hover:bg-accent text-white py-4 rounded-lg font-semibold transition-all duration-300">
+                                        <i class="fas fa-paper-plane mr-2"></i>发送消息
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 页脚 -->
+                    <footer class="bg-gray-900/80 border-t border-gray-700 py-8">
+                        <div class="container mx-auto px-6 text-center">
+                            <div class="flex justify-center space-x-6 mb-4">
+                                <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                                    <i class="fab fa-github text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                                        <i class="fab fa-weixin text-2xl"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                                            <i class="fab fa-qq text-2xl"></i>
+                                        </a>
+                                    </div>
+                                    
+                                    <p class="text-gray-400">&copy; 2025 Vessel Li. 保留所有权利。</p>
+                                    <p class="text-gray-500 text-sm mt-2">持续学习，不断进步</p>
+                                </div>
+                            </footer>
+
+                            <!-- 进度条 -->
+                            <div class="fixed bottom-0 left-0 w-full h-1 bg-gray-700">
+                                <div id="progress-bar" class="h-full bg-primary transition-all duration-300" style="width: 0%"></div>
+                            </div>
+
+                            <!-- 背景音乐控制 -->
+                            <div class="fixed bottom-4 right-4">
+                                <button id="music-toggle" class="bg-primary hover:bg-accent text-white p-3 rounded-full shadow-lg transition-all duration-300">
+                                    <i class="fas fa-music"></i>
+                                </button>
+                            </div>
+
+                            <script>
+                                // 移动端菜单切换
+                                document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+                                    const menu = document.getElementById('mobile-menu');
+                                    menu.classList.toggle('hidden');
+                                });
+                                
+                                // 平滑滚动
+                                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                    anchor.addEventListener('click', function (e) {
+                                        e.preventDefault();
+                                        const target = document.querySelector(this.getAttribute('href'));
+                                        if (target) {
+                                            target.scrollIntoView({
+                                                behavior: 'smooth',
+                                                block: 'start'
+                                            });
+                                        }
+                                    });
+                                });
+                                
+                                // 导航链接高亮
+                                const sections = document.querySelectorAll('section');
+                                const navLinks = document.querySelectorAll('.nav-link');
+                                
+                                window.addEventListener('scroll', function() {
+                                    let current = '';
+                                    sections.forEach(section => {
+                                        const sectionTop = section.offsetTop - 100;
+                                        const sectionHeight = section.clientHeight;
+                                        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                                            current = section.getAttribute('id');
+                                        }
+                                    });
+                                    
+                                    navLinks.forEach(link => {
+                                        link.classList.remove('text-primary');
+                                        if (link.getAttribute('href') === `#${current}`) {
+                                            link.classList.add('text-primary');
+                                        }
+                                    });
+                                    
+                                    // 更新进度条
+                                    const progressBar = document.getElementById('progress-bar');
+                                    const windowHeight = window.innerHeight;
+                                    const documentHeight = document.documentElement.scrollHeight - windowHeight;
+                                    const scrolled = (window.pageYOffset / documentHeight) * 100;
+                                    progressBar.style.width = scrolled + '%';
+                                });
+                                
+                                // 背景音乐控制
+                                const musicToggle = document.getElementById('music-toggle');
+                                let isPlaying = false;
+                                
+                                musicToggle.addEventListener('click', function() {
+                                    isPlaying = !isPlaying;
+                                    this.innerHTML = isPlaying ? 
+                                        '<i class="fas fa-volume-mute"></i>' : 
+                                        '<i class="fas fa-music"></i>';
+                                });
+                                
+                                // 联系表单提交
+                                document.getElementById('contact-form').addEventListener('submit', function(e) {
+                                    e.preventDefault();
+                                    alert('感谢您的留言！我会尽快回复您。');
+                                    this.reset();
+                                });
+                            </script>
+                        </body>
+                        </html>
